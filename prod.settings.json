@@ -1,0 +1,7 @@
+{
+    "baseUrl": "https://prod.automationtesting.in/my-account/",
+    "env": {
+      "email": "automationprod1@teste.com",
+      "senha": "Automation12345@prod"
+    }
+  }
