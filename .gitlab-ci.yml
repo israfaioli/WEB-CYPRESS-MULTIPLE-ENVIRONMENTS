@@ -1,0 +1,8 @@
+stages:
+  - test
+
+cypress_tests:
+  stage: test
+  image: cypress-tests
+  script:
+    - npx cypress run --browser chrome --env environmentName=homolog --spec "cypress/e2e/login/login.cy.js"
