@@ -1,0 +1,24 @@
+{
+  "name": "WEB-CYPRESS-MULTIPLE-ENVIRONMENTS",
+  "version": "1.0.0",
+  "description": "Projeto cypres versao 12+ onde demonstro utilização de multiplos environments",
+  "main": "cypress.config.js",
+  "dependencies": {
+    "cypress": "^12.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/israfaioli/WEB-CYPRESS-MULTIPLE-ENVIRONMENTS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/israfaioli/WEB-CYPRESS-MULTIPLE-ENVIRONMENTS/issues"
+  },
+  "homepage": "https://github.com/israfaioli/WEB-CYPRESS-MULTIPLE-ENVIRONMENTS#readme"
+}
