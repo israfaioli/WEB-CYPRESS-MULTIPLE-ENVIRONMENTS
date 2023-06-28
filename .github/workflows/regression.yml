@@ -24,4 +24,4 @@ jobs:
       - name: Build and run Cypress tests
         run: |
           docker build -t cypress-tests .
-          docker run --rm cypress-tests
+          docker run --rm cypress-tests npx cypress run --browser chrome --env environmentName=homolog --spec "cypress/e2e/login/login.cy.js"
