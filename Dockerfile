@@ -1,11 +1,17 @@
-# Imagem base
-FROM cypress/included:8.6.0
+#utilizando uma imagem node
+FROM node:14
 
-# Versão específica do Cypress
-RUN npm install cypress@12.5.0
+#definindo diretorio de trabalho dentro do container
+WORKDIR /app
 
-# Copia o arquivo de configuração do Cypress
-COPY cypress /cypress
+# copiando o .package.json para o container
+COPY package.json ./
 
-# Comando para executar os testes
-CMD ["npx", "cypress", "run", "--browser", "chrome", "--env", "environmentName=homolog", "--spec", "cypress/e2e/login/login.cy.js"]
+# instalando as dependencias do projeto
+RUN npm i
+
+#copiando todos os arquivos do diretorio atual para o diretorio de trabalho no container
+COPY . .
+
+#executando os testes cypress
+CMD npx cypress run --browser chrome --env environmentName=homolog
