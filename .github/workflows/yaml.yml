@@ -7,6 +7,8 @@ on:
   pull_request:
     branches:
       - main
+  schedule:
+    - cron: "0 8 * * 1" # Executar às 8AM de segunda-feira      
 
 jobs:
   cypress:
@@ -26,3 +28,12 @@ jobs:
 
       - name: Run Cypress tests
         run: npx cypress run --browser chrome --env environmentName=homolog
+
+      - name: Capture index.html
+        run: cp cypress/html/index.html ${{ github.workspace }}/index.html
+
+      - name: Publish artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-results
+          path: ${{ github.workspace }}/index.html
