@@ -27,8 +27,9 @@ module.exports = defineConfig({
     },
   },
 
-  "viewportWidth": 1920,
-  "viewportHeight": 1080,
+  "viewportHeight": 768,
+  "viewportWidth": 1266,
+
 
   "reporter": "cypress-mochawesome-reporter",
   "reporterOptions": {
