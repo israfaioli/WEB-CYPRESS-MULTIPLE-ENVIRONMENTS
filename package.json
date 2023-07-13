@@ -1,0 +1,28 @@
+{
+  "name": "WEB-CYPRESS-MULTIPLE-ENVIRONMENTS",
+  "version": "1.0.0",
+  "description": "Projeto cypres versao 12+ onde demonstro utilização de multiplos environments",
+  "main": "cypress.config.js",
+  "dependencies": {
+    "cypress": "^12.5.0",
+    "oci-common": "^2.64.0",
+    "oci-objectstorage": "^2.64.0"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.5.1"
+  },
+  "scripts": {
+    "test": "npx cypress run --browser chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/israfaioli/WEB-CYPRESS-MULTIPLE-ENVIRONMENTS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/israfaioli/WEB-CYPRESS-MULTIPLE-ENVIRONMENTS/issues"
+  },
+  "homepage": "https://github.com/israfaioli/WEB-CYPRESS-MULTIPLE-ENVIRONMENTS#readme"
+}

@@ -39,4 +39,5 @@ Cypress.Commands.add('clicarNoElemento', (elemento) => {
 
 Cypress.Commands.add('ValidarSeCampoContemMensagem', (elemento, mensagem) => {
     cy.get(elemento).should('be.visible').should('contain.text', mensagem)
+    cy.screenshot()
 })
