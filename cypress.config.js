@@ -2,6 +2,15 @@ const { defineConfig } = require('cypress')
 //const {submitReport} = require('./cypress/support/oci/authorization')
 
 module.exports = defineConfig({
+  reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: 'Tests Report',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
+
   e2e: {
     // default baseUrl, etc
     supportFile: false,
@@ -25,19 +34,5 @@ module.exports = defineConfig({
       //on('after:run', async (result) => await submitReport(result))
       return config
     },
-  },
-
-  "viewportHeight": 768,
-  "viewportWidth": 1266,
-
-
-  "reporter": "cypress-mochawesome-reporter",
-  "reporterOptions": {
-    "reportDir": "cypress/reports",
-    "charts": true,
-    "reportPageTitle": "My Test Suite",
-    "embeddedScreenshots": true,
-    "inlineAssets": true
-  },
-  "video": false
+  }
 })
