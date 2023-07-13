@@ -7,10 +7,6 @@ WORKDIR /app
 # copiando o .package.json para o container
 COPY package.json ./
 
-# Instalando o Xvfb
-RUN apt-get update && \
-    apt-get install -y xvfb
-
 # instalando as dependencias do projeto
 RUN npm i
 
