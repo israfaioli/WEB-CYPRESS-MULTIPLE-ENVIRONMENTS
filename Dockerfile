@@ -1,5 +1,5 @@
 # Utilizando uma imagem node
-FROM node:14
+FROM cypress/base:latest
 
 # Definindo diretório de trabalho dentro do container
 WORKDIR /app
