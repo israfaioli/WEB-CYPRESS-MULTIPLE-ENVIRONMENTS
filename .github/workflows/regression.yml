@@ -1,27 +1,25 @@
-name: Cypress Tests
+name: Cypress Test
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  cypress_tests:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 14
 
-      - name: Build and run Cypress tests
-        run: |
-          docker build -t cypress-tests .
-          docker run --rm cypress-tests npx cypress run --browser chrome --env environmentName=homolog --spec "cypress/e2e/login/login.cy.js"
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress tests
+        run: npx cypress run --browser chrome --env environmentName=homolog
