@@ -1,5 +1,5 @@
 # Utilizando uma imagem node
-FROM cypress/browsers
+FROM docker.io/cypress/browsers
 
 # Definindo diretório de trabalho dentro do container
 WORKDIR /app
