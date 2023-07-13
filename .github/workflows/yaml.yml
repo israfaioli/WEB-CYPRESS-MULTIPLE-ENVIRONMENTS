@@ -30,7 +30,7 @@ jobs:
         run: npx cypress run --browser chrome --env environmentName=homolog
 
       - name: Capture index.html
-        run: cp cypress/html/index.html ${{ github.workspace }}/index.html
+        run: cp cypress/reports/html/index.html ${{ github.workspace }}/index.html
 
       - name: Publish artifact
         uses: actions/upload-artifact@v2
