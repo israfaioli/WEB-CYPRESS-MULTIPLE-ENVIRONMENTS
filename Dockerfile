@@ -1,17 +1,21 @@
-#utilizando uma imagem node
+# Utilizando uma imagem node
 FROM node:14
 
-#definindo diretorio de trabalho dentro do container
+# Definindo diretório de trabalho dentro do container
 WORKDIR /app
 
-# copiando o .package.json para o container
+# Instalando o Xvfb
+RUN apt-get update && \
+    apt-get install -y xvfb
+
+# Copiando o package.json para o container
 COPY package.json ./
 
-# instalando as dependencias do projeto
+# Instalando as dependências do projeto
 RUN npm i
 
-#copiando todos os arquivos do diretorio atual para o diretorio de trabalho no container
+# Copiando todos os arquivos do diretório atual para o diretório de trabalho no container
 COPY . .
 
-#executando os testes cypress
-CMD npx cypress run --browser chrome --env environmentName=homolog
+# Executando os testes Cypress com Xvfb
+CMD xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" npx cypress run --browser chrome --env environmentName=homolog
