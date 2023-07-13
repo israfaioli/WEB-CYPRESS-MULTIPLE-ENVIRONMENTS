@@ -22,4 +22,4 @@ RUN npm install
 COPY . .
 
 # Executando os testes Cypress no Chrome em modo headless
-CMD npx cypress run --browser chrome --headless --env environmentName=homolog
+CMD npx cypress run --browser chrome --env environmentName=homolog
