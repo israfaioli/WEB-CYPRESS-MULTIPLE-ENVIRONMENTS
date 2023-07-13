@@ -1,8 +1,13 @@
 stages:
   - test
 
-cypress_tests:
+Cypress Tests:
   stage: test
-  image: cypress-tests
+  image: cypress/included:8.3.0
   script:
-    - npx cypress run --browser chrome --env environmentName=homolog --spec "cypress/e2e/login/login.cy.js"
+    - npm ci
+    - npx cypress run --browser chrome --env environmentName=homolog
+    - cp cypress/reports/html/index.html $CI_PROJECT_DIR/index.html
+  artifacts:
+    paths:
+      - index.html
